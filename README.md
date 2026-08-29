@@ -71,6 +71,10 @@ Then open any post or page and look for the Block Ferry icon in the top-right of
 2. Under **Save as pattern**, give it a name and click **Save synced pattern**.
 3. It shows up in the pattern inserter (the **+** button → **Patterns**), ready to reuse.
 
+## Screenshot
+
+![The Block Ferry sidebar with the Export, Import, and Save as pattern sections](.wordpress-org/screenshot-1.png)
+
 ## How the portable format works
 
 The export is the same block markup WordPress writes to the database, the `<!-- wp:... -->` comments you'd see in the code editor. That's deliberate: it means an exported file is not locked to this plugin. You can open it, copy the contents, and paste them into a plain block editor and they'll rebuild correctly. Block Ferry just makes that a click instead of a copy-and-paste dance.
