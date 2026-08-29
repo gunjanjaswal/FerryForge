@@ -12,7 +12,7 @@ Move blocks between sites. Export a selection or whole post, import it anywhere,
 
 == Description ==
 
-Copying blocks from one site to another usually means having both editors open at the same time and hoping the clipboard cooperates. Block Ferry gives you a file instead.
+Native copy and paste only works when both editors are open in the same browser at the same moment. That falls apart the second you need to send a layout to a client, move it between two sites you cannot have open together, or keep a copy for next month. Block Ferry turns the blocks into a file you can save, share, and bring back whenever you want.
 
 Select a few blocks (or leave nothing selected to grab the entire post), open the Block Ferry sidebar, and you can:
 

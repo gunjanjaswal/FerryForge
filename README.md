@@ -18,11 +18,11 @@
 
 ## Why it exists
 
-Copying blocks from one site to another usually means opening both editors at the same time and hoping the clipboard behaves. That falls apart the moment the two sites aren't open together, or you want to hand a layout to a client for later.
+Native copy and paste only works when both editors are open in the same browser at the same moment. The instant you need to send a layout to a client, move it between two sites you can't have open together, or keep a copy for next month, the clipboard is no help.
 
-Block Ferry gives you a **file** instead. Export the blocks you want, send the file, import it on the other end. It uses standard WordPress block markup, so the export pastes cleanly into any editor even if the plugin isn't installed there.
+Block Ferry gives you a **file** instead. Export the blocks you want, send or save the file, import it on the other end whenever you're ready. It uses standard WordPress block markup, so the export pastes cleanly into any editor even if the plugin isn't installed there.
 
-No accounts. No external service. No settings page. Everything happens right in the editor.
+That's the difference from a plain reusable block or a clipboard copy: the layout becomes something you can hand off, archive, and reuse across sites, not something trapped in one browser session. No accounts, no external service, no settings page. Everything happens right in the editor.
 
 ## Features
 
