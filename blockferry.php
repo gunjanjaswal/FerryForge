@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Block Ferry
- * Plugin URI:        https://www.gunjanjaswal.me
+ * Plugin URI:        https://github.com/gunjanjaswal/Block-Ferry
  * Description:       Move blocks between sites. Export a selection (or the whole post) to a file or the clipboard, import it anywhere, and save a selection as a synced pattern, all from the editor sidebar.
  * Version:           1.0.0
  * Requires at least: 6.3
