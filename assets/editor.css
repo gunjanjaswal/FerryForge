@@ -1,0 +1,16 @@
+.blockferry-button {
+	margin-right: 8px;
+	margin-bottom: 8px;
+}
+
+.blockferry-hint {
+	color: #757575;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+
+.blockferry-file {
+	display: block;
+	margin-top: 4px;
+	max-width: 100%;
+}

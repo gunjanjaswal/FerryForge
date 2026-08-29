@@ -1,0 +1,113 @@
+# Block Ferry
+
+<p align="center">
+  <img src="https://img.shields.io/badge/WordPress-6.3%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 6.3+">
+  <img src="https://img.shields.io/badge/PHP-7.4%2B-777BB4?logo=php&logoColor=white" alt="PHP 7.4+">
+  <img src="https://img.shields.io/badge/Tested%20up%20to-7.1-21759B?logo=wordpress&logoColor=white" alt="Tested up to 7.1">
+  <img src="https://img.shields.io/badge/License-GPLv2%2B-3DA639?logo=gnu&logoColor=white" alt="License GPLv2+">
+  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/build-no%20build%20step-blue" alt="No build step">
+</p>
+
+<p align="center">
+  <b>Move blocks between WordPress sites.</b><br>
+  Export a selection or a whole post, import it anywhere, and save selections as synced patterns, all from the editor sidebar.
+</p>
+
+---
+
+## Why it exists
+
+Copying blocks from one site to another usually means opening both editors at the same time and hoping the clipboard behaves. That falls apart the moment the two sites aren't open together, or you want to hand a layout to a client for later.
+
+Block Ferry gives you a **file** instead. Export the blocks you want, send the file, import it on the other end. It uses standard WordPress block markup, so the export pastes cleanly into any editor even if the plugin isn't installed there.
+
+No accounts. No external service. No settings page. Everything happens right in the editor.
+
+## Features
+
+| | |
+|---|---|
+| **Export** | Copy the selected blocks (or the whole post) to your clipboard, or download them as a file. |
+| **Import** | Paste block markup or load an exported file, and the blocks drop straight into the post you're editing. |
+| **Save as pattern** | Turn any selection into a synced pattern you can reuse across the site. |
+| **Portable format** | Exports are plain block markup, readable by any WordPress editor. |
+| **Zero setup** | Runs on the editor's own scripts, no build step, no configuration. |
+
+## Installation
+
+**From your dashboard**
+
+1. Download this repository as a ZIP.
+2. Go to **Plugins → Add New → Upload Plugin** and pick the ZIP.
+3. Activate it.
+
+**Manually**
+
+1. Copy the `blockferry` folder into `wp-content/plugins/`.
+2. Activate **Block Ferry** on the Plugins screen.
+
+Then open any post or page and look for the Block Ferry icon in the top-right of the editor.
+
+## How to use it
+
+### Export
+
+1. Select the blocks you want. Leave nothing selected to grab every top-level block in the post.
+2. Open the **Block Ferry** sidebar (the migrate icon, or the ⋮ menu → Block Ferry).
+3. Under **Export**, choose:
+   - **Copy blocks** to put them on your clipboard, ready to paste into any editor.
+   - **Download as file** to save an `.html` file you can import later or share.
+
+### Import
+
+1. Click into the spot where the blocks should land.
+2. Under **Import**, either paste block markup into the box and hit **Add blocks**, or load a file you exported earlier.
+3. The blocks appear in the post.
+
+### Save as pattern
+
+1. Select the blocks you want to keep.
+2. Under **Save as pattern**, give it a name and click **Save synced pattern**.
+3. It shows up in the pattern inserter (the **+** button → **Patterns**), ready to reuse.
+
+## How the portable format works
+
+The export is the same block markup WordPress writes to the database, the `<!-- wp:... -->` comments you'd see in the code editor. That's deliberate: it means an exported file is not locked to this plugin. You can open it, copy the contents, and paste them into a plain block editor and they'll rebuild correctly. Block Ferry just makes that a click instead of a copy-and-paste dance.
+
+## Frequently asked questions
+
+**Where is it in the editor?**
+Top-right toolbar icon, or the ⋮ options menu → Block Ferry. The sidebar has Export, Import, and Save as pattern sections.
+
+**What gets exported when nothing is selected?**
+Every top-level block in the post. Select specific blocks first if you only want part of it.
+
+**Can I import into a site that doesn't have Block Ferry?**
+Yes. Open the exported file, copy everything, and paste it into any block editor. The import panel just saves you that step.
+
+**Does it send my content anywhere?**
+No. Copy, download, and import all run in your browser. Saving a pattern uses your own site's REST API, exactly like the editor already does.
+
+## Requirements
+
+- WordPress 6.3 or newer
+- PHP 7.4 or newer
+
+## Support
+
+If Block Ferry saves you some time, you can [buy me a coffee on Ko-fi](https://ko-fi.com/gunjanjaswal). It genuinely helps.
+
+Found a bug or have an idea? Open an issue, or email me at [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me).
+
+## Author
+
+**Gunjan Jaswal**
+
+- Website: [gunjanjaswal.me](https://www.gunjanjaswal.me)
+- Email: [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me)
+- Ko-fi: [ko-fi.com/gunjanjaswal](https://ko-fi.com/gunjanjaswal)
+
+## License
+
+Released under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
