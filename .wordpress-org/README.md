@@ -23,8 +23,8 @@ up automatically on GitHub and, once deployed, on the WordPress.org page.
 After the plugin is approved, these files go into the SVN `/assets/` directory:
 
 ```
-svn co https://plugins.svn.wordpress.org/blockferry
-# copy this folder's files into blockferry/assets/
+svn co https://plugins.svn.wordpress.org/ferryforge
+# copy this folder's files into ferryforge/assets/
 svn add assets/*
 svn ci -m "Add plugin assets"
 ```

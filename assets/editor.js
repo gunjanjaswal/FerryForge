@@ -14,7 +14,7 @@
 	var TextareaControl = wp.components.TextareaControl;
 	var TextControl = wp.components.TextControl;
 
-	var SIDEBAR_NAME = 'blockferry-sidebar';
+	var SIDEBAR_NAME = 'ferryforge-sidebar';
 
 	function notice( type, message ) {
 		var dispatch = wp.data.dispatch( 'core/notices' );
@@ -85,10 +85,10 @@
 			slug = 'blocks';
 		}
 
-		return 'blockferry-' + slug + '.html';
+		return 'ferryforge-' + slug + '.html';
 	}
 
-	function BlockFerryPanel() {
+	function FerryForgePanel() {
 		var importState = useState( '' );
 		var importValue = importState[ 0 ];
 		var setImportValue = importState[ 1 ];
@@ -104,24 +104,24 @@
 		function selectionLabel() {
 			var ids = wp.data.select( 'core/block-editor' ).getSelectedBlockClientIds();
 			if ( ids && ids.length ) {
-				return __( 'Using your current selection.', 'blockferry' );
+				return __( 'Using your current selection.', 'ferryforge' );
 			}
-			return __( 'Nothing selected, so the whole post will be used.', 'blockferry' );
+			return __( 'Nothing selected, so the whole post will be used.', 'ferryforge' );
 		}
 
 		function handleCopy() {
 			var blocks = collectBlocks();
 			if ( ! blocks.length ) {
-				notice( 'error', __( 'There are no blocks to copy yet.', 'blockferry' ) );
+				notice( 'error', __( 'There are no blocks to copy yet.', 'ferryforge' ) );
 				return;
 			}
 			var markup = wp.blocks.serialize( blocks );
 			copyToClipboard( markup ).then(
 				function () {
-					notice( 'success', __( 'Blocks copied. Paste them into any block editor.', 'blockferry' ) );
+					notice( 'success', __( 'Blocks copied. Paste them into any block editor.', 'ferryforge' ) );
 				},
 				function () {
-					notice( 'error', __( 'Could not reach the clipboard. Try the download instead.', 'blockferry' ) );
+					notice( 'error', __( 'Could not reach the clipboard. Try the download instead.', 'ferryforge' ) );
 				}
 			);
 		}
@@ -129,18 +129,18 @@
 		function handleDownload() {
 			var blocks = collectBlocks();
 			if ( ! blocks.length ) {
-				notice( 'error', __( 'There are no blocks to export yet.', 'blockferry' ) );
+				notice( 'error', __( 'There are no blocks to export yet.', 'ferryforge' ) );
 				return;
 			}
 			var markup = wp.blocks.serialize( blocks );
 			downloadFile( markup, suggestedFilename() );
-			notice( 'success', __( 'Export file downloaded.', 'blockferry' ) );
+			notice( 'success', __( 'Export file downloaded.', 'ferryforge' ) );
 		}
 
 		function insertMarkup( markup ) {
 			var trimmed = ( markup || '' ).trim();
 			if ( ! trimmed ) {
-				notice( 'error', __( 'Paste some block markup first.', 'blockferry' ) );
+				notice( 'error', __( 'Paste some block markup first.', 'ferryforge' ) );
 				return;
 			}
 
@@ -150,12 +150,12 @@
 			} );
 
 			if ( ! parsed.length ) {
-				notice( 'error', __( 'That did not look like block markup.', 'blockferry' ) );
+				notice( 'error', __( 'That did not look like block markup.', 'ferryforge' ) );
 				return;
 			}
 
 			wp.data.dispatch( 'core/block-editor' ).insertBlocks( parsed );
-			notice( 'success', __( 'Blocks added to the post.', 'blockferry' ) );
+			notice( 'success', __( 'Blocks added to the post.', 'ferryforge' ) );
 			setImportValue( '' );
 		}
 
@@ -169,7 +169,7 @@
 				insertMarkup( String( reader.result ) );
 			};
 			reader.onerror = function () {
-				notice( 'error', __( 'That file could not be read.', 'blockferry' ) );
+				notice( 'error', __( 'That file could not be read.', 'ferryforge' ) );
 			};
 			reader.readAsText( file );
 			event.target.value = '';
@@ -178,13 +178,13 @@
 		function handleSavePattern() {
 			var blocks = collectBlocks();
 			if ( ! blocks.length ) {
-				notice( 'error', __( 'Select the blocks you want to save first.', 'blockferry' ) );
+				notice( 'error', __( 'Select the blocks you want to save first.', 'ferryforge' ) );
 				return;
 			}
 
 			var title = ( patternName || '' ).trim();
 			if ( ! title ) {
-				notice( 'error', __( 'Give the pattern a name.', 'blockferry' ) );
+				notice( 'error', __( 'Give the pattern a name.', 'ferryforge' ) );
 				return;
 			}
 
@@ -201,11 +201,11 @@
 				function () {
 					setSaving( false );
 					setPatternName( '' );
-					notice( 'success', __( 'Saved as a synced pattern.', 'blockferry' ) );
+					notice( 'success', __( 'Saved as a synced pattern.', 'ferryforge' ) );
 				},
 				function () {
 					setSaving( false );
-					notice( 'error', __( 'The pattern could not be saved.', 'blockferry' ) );
+					notice( 'error', __( 'The pattern could not be saved.', 'ferryforge' ) );
 				}
 			);
 		}
@@ -215,24 +215,24 @@
 			null,
 			el(
 				PanelBody,
-				{ title: __( 'Export', 'blockferry' ), initialOpen: true },
-				el( 'p', { className: 'blockferry-hint' }, selectionLabel() ),
+				{ title: __( 'Export', 'ferryforge' ), initialOpen: true },
+				el( 'p', { className: 'ferryforge-hint' }, selectionLabel() ),
 				el(
 					Button,
-					{ variant: 'primary', onClick: handleCopy, className: 'blockferry-button' },
-					__( 'Copy blocks', 'blockferry' )
+					{ variant: 'primary', onClick: handleCopy, className: 'ferryforge-button' },
+					__( 'Copy blocks', 'ferryforge' )
 				),
 				el(
 					Button,
-					{ variant: 'secondary', onClick: handleDownload, className: 'blockferry-button' },
-					__( 'Download as file', 'blockferry' )
+					{ variant: 'secondary', onClick: handleDownload, className: 'ferryforge-button' },
+					__( 'Download as file', 'ferryforge' )
 				)
 			),
 			el(
 				PanelBody,
-				{ title: __( 'Import', 'blockferry' ), initialOpen: false },
+				{ title: __( 'Import', 'ferryforge' ), initialOpen: false },
 				el( TextareaControl, {
-					label: __( 'Paste block markup', 'blockferry' ),
+					label: __( 'Paste block markup', 'ferryforge' ),
 					value: importValue,
 					onChange: setImportValue,
 					rows: 6,
@@ -245,24 +245,24 @@
 						onClick: function () {
 							insertMarkup( importValue );
 						},
-						className: 'blockferry-button',
+						className: 'ferryforge-button',
 					},
-					__( 'Add blocks', 'blockferry' )
+					__( 'Add blocks', 'ferryforge' )
 				),
-				el( 'p', { className: 'blockferry-hint' }, __( 'Or load a file exported from another site:', 'blockferry' ) ),
+				el( 'p', { className: 'ferryforge-hint' }, __( 'Or load a file exported from another site:', 'ferryforge' ) ),
 				el( 'input', {
 					type: 'file',
 					accept: '.html,.htm,.txt',
 					onChange: handleFile,
-					className: 'blockferry-file',
+					className: 'ferryforge-file',
 				} )
 			),
 			el(
 				PanelBody,
-				{ title: __( 'Save as pattern', 'blockferry' ), initialOpen: false },
-				el( 'p', { className: 'blockferry-hint' }, selectionLabel() ),
+				{ title: __( 'Save as pattern', 'ferryforge' ), initialOpen: false },
+				el( 'p', { className: 'ferryforge-hint' }, selectionLabel() ),
 				el( TextControl, {
-					label: __( 'Pattern name', 'blockferry' ),
+					label: __( 'Pattern name', 'ferryforge' ),
 					value: patternName,
 					onChange: setPatternName,
 				} ),
@@ -273,9 +273,9 @@
 						onClick: handleSavePattern,
 						isBusy: saving,
 						disabled: saving,
-						className: 'blockferry-button',
+						className: 'ferryforge-button',
 					},
-					saving ? __( 'Saving...', 'blockferry' ) : __( 'Save synced pattern', 'blockferry' )
+					saving ? __( 'Saving...', 'ferryforge' ) : __( 'Save synced pattern', 'ferryforge' )
 				)
 			)
 		);
@@ -290,12 +290,12 @@
 				el(
 					PluginSidebarMoreMenuItem,
 					{ target: SIDEBAR_NAME, icon: 'migrate' },
-					__( 'Block Ferry', 'blockferry' )
+					__( 'FerryForge', 'ferryforge' )
 				),
 				el(
 					PluginSidebar,
-					{ name: SIDEBAR_NAME, icon: 'migrate', title: __( 'Block Ferry', 'blockferry' ) },
-					el( BlockFerryPanel, null )
+					{ name: SIDEBAR_NAME, icon: 'migrate', title: __( 'FerryForge', 'ferryforge' ) },
+					el( FerryForgePanel, null )
 				)
 			);
 		},

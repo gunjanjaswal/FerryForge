@@ -1,15 +1,15 @@
-.blockferry-button {
+.ferryforge-button {
 	margin-right: 8px;
 	margin-bottom: 8px;
 }
 
-.blockferry-hint {
+.ferryforge-hint {
 	color: #757575;
 	font-size: 12px;
 	margin: 0 0 12px;
 }
 
-.blockferry-file {
+.ferryforge-file {
 	display: block;
 	margin-top: 4px;
 	max-width: 100%;
