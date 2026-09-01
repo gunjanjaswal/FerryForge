@@ -62,4 +62,12 @@ No. Copying, downloading, and importing all run in your browser. Saving a patter
 == Changelog ==
 
 = 1.0.0 =
-* First release: export, import, and save a selection as a synced pattern from the editor sidebar.
+* First release.
+* Export selected blocks, or the whole post, to the clipboard or a downloadable file.
+* Import blocks from a file or pasted markup straight into the post you are editing.
+* Save a selection as a synced pattern.
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+First release of FerryForge.
