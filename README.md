@@ -1,4 +1,4 @@
-# FerryForge
+# Ferry Forge
 
 <p align="center">
   <img src="https://img.shields.io/badge/WordPress-6.3%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 6.3+">
@@ -20,7 +20,7 @@
 
 Native copy and paste only works when both editors are open in the same browser at the same moment. The instant you need to send a layout to a client, move it between two sites you can't have open together, or keep a copy for next month, the clipboard is no help.
 
-FerryForge gives you a **file** instead. Export the blocks you want, send or save the file, import it on the other end whenever you're ready. It uses standard WordPress block markup, so the export pastes cleanly into any editor even if the plugin isn't installed there.
+Ferry Forge gives you a **file** instead. Export the blocks you want, send or save the file, import it on the other end whenever you're ready. It uses standard WordPress block markup, so the export pastes cleanly into any editor even if the plugin isn't installed there.
 
 That's the difference from a plain reusable block or a clipboard copy: the layout becomes something you can hand off, archive, and reuse across sites, not something trapped in one browser session. No accounts, no external service, no settings page. Everything happens right in the editor.
 
@@ -45,16 +45,16 @@ That's the difference from a plain reusable block or a clipboard copy: the layou
 **Manually**
 
 1. Copy the `ferryforge` folder into `wp-content/plugins/`.
-2. Activate **FerryForge** on the Plugins screen.
+2. Activate **Ferry Forge** on the Plugins screen.
 
-Then open any post or page and look for the FerryForge icon in the top-right of the editor.
+Then open any post or page and look for the Ferry Forge icon in the top-right of the editor.
 
 ## How to use it
 
 ### Export
 
 1. Select the blocks you want. Leave nothing selected to grab every top-level block in the post.
-2. Open the **FerryForge** sidebar (the migrate icon, or the ⋮ menu → FerryForge).
+2. Open the **Ferry Forge** sidebar (the migrate icon, or the ⋮ menu → Ferry Forge).
 3. Under **Export**, choose:
    - **Copy blocks** to put them on your clipboard, ready to paste into any editor.
    - **Download as file** to save an `.html` file you can import later or share.
@@ -73,21 +73,21 @@ Then open any post or page and look for the FerryForge icon in the top-right of 
 
 ## Screenshot
 
-![The FerryForge sidebar with the Export, Import, and Save as pattern sections](.wordpress-org/screenshot-1.png)
+![The Ferry Forge sidebar with the Export, Import, and Save as pattern sections](.wordpress-org/screenshot-1.png)
 
 ## How the portable format works
 
-The export is the same block markup WordPress writes to the database, the `<!-- wp:... -->` comments you'd see in the code editor. That's deliberate: it means an exported file is not locked to this plugin. You can open it, copy the contents, and paste them into a plain block editor and they'll rebuild correctly. FerryForge just makes that a click instead of a copy-and-paste dance.
+The export is the same block markup WordPress writes to the database, the `<!-- wp:... -->` comments you'd see in the code editor. That's deliberate: it means an exported file is not locked to this plugin. You can open it, copy the contents, and paste them into a plain block editor and they'll rebuild correctly. Ferry Forge just makes that a click instead of a copy-and-paste dance.
 
 ## Frequently asked questions
 
 **Where is it in the editor?**
-Top-right toolbar icon, or the ⋮ options menu → FerryForge. The sidebar has Export, Import, and Save as pattern sections.
+Top-right toolbar icon, or the ⋮ options menu → Ferry Forge. The sidebar has Export, Import, and Save as pattern sections.
 
 **What gets exported when nothing is selected?**
 Every top-level block in the post. Select specific blocks first if you only want part of it.
 
-**Can I import into a site that doesn't have FerryForge?**
+**Can I import into a site that doesn't have Ferry Forge?**
 Yes. Open the exported file, copy everything, and paste it into any block editor. The import panel just saves you that step.
 
 **Does it send my content anywhere?**
@@ -100,7 +100,7 @@ No. Copy, download, and import all run in your browser. Saving a pattern uses yo
 
 ## Support
 
-If FerryForge saves you some time, you can [buy me a coffee on Ko-fi](https://ko-fi.com/gunjanjaswal). It genuinely helps.
+If Ferry Forge saves you some time, you can [buy me a coffee on Ko-fi](https://ko-fi.com/gunjanjaswal). It genuinely helps.
 
 Found a bug or have an idea? Open an issue, or email me at [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me).
 

@@ -290,11 +290,11 @@
 				el(
 					PluginSidebarMoreMenuItem,
 					{ target: SIDEBAR_NAME, icon: 'migrate' },
-					__( 'FerryForge', 'ferryforge' )
+					__( 'Ferry Forge', 'ferryforge' )
 				),
 				el(
 					PluginSidebar,
-					{ name: SIDEBAR_NAME, icon: 'migrate', title: __( 'FerryForge', 'ferryforge' ) },
+					{ name: SIDEBAR_NAME, icon: 'migrate', title: __( 'Ferry Forge', 'ferryforge' ) },
 					el( FerryForgePanel, null )
 				)
 			);
