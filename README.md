@@ -108,7 +108,7 @@ Found a bug or have an idea? Open an issue, or email me at [hello@gunjanjaswal.m
 
 **Gunjan Jaswal**
 
-- Website: [gunjanjaswal.me](https://www.gunjanjaswal.me)
+- Website: [gunjanjaswal.me](https://gunjanjaswal.me)
 - Email: [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me)
 - Ko-fi: [ko-fi.com/gunjanjaswal](https://ko-fi.com/gunjanjaswal)
 

@@ -29,7 +29,7 @@ The export uses standard block markup, so anything you copy or download will pas
 
 If Ferry Forge saves you some time, you can buy me a coffee on Ko-fi: https://ko-fi.com/gunjanjaswal
 
-Built by Gunjan Jaswal. Questions or ideas? Reach me at hello@gunjanjaswal.me or https://www.gunjanjaswal.me
+Built by Gunjan Jaswal. Questions or ideas? Reach me at hello@gunjanjaswal.me or https://gunjanjaswal.me
 
 == Installation ==
 
