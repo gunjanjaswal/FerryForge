@@ -13,6 +13,7 @@
 	var PanelBody = wp.components.PanelBody;
 	var TextareaControl = wp.components.TextareaControl;
 	var TextControl = wp.components.TextControl;
+	var CheckboxControl = wp.components.CheckboxControl;
 
 	var SIDEBAR_NAME = 'ferryforge-sidebar';
 
@@ -101,6 +102,10 @@
 		var saving = savingState[ 0 ];
 		var setSaving = savingState[ 1 ];
 
+		var mediaState = useState( false );
+		var importMedia = mediaState[ 0 ];
+		var setImportMedia = mediaState[ 1 ];
+
 		function selectionLabel() {
 			var ids = wp.data.select( 'core/block-editor' ).getSelectedBlockClientIds();
 			if ( ids && ids.length ) {
@@ -137,14 +142,24 @@
 			notice( 'success', __( 'Export file downloaded.', 'ferryforge' ) );
 		}
 
-		function insertMarkup( markup ) {
-			var trimmed = ( markup || '' ).trim();
-			if ( ! trimmed ) {
-				notice( 'error', __( 'Paste some block markup first.', 'ferryforge' ) );
-				return;
+		// Pull image URLs out of raw block markup.
+		function extractImageUrls( markup ) {
+			var urls = [];
+			var seen = {};
+			var re = /https?:\/\/[^\s"'<>\\]+?\.(?:png|jpe?g|gif|webp|svg|avif)/gi;
+			var match;
+			while ( ( match = re.exec( markup ) ) !== null ) {
+				var url = match[ 0 ];
+				if ( ! seen[ url ] ) {
+					seen[ url ] = true;
+					urls.push( url );
+				}
 			}
+			return urls;
+		}
 
-			var parsed = wp.blocks.parse( trimmed );
+		function doInsert( markup ) {
+			var parsed = wp.blocks.parse( markup );
 			parsed = parsed.filter( function ( block ) {
 				return block && block.name;
 			} );
@@ -159,6 +174,47 @@
 			setImportValue( '' );
 		}
 
+		function insertMarkup( markup, sideload ) {
+			var trimmed = ( markup || '' ).trim();
+			if ( ! trimmed ) {
+				notice( 'error', __( 'Paste some block markup first.', 'ferryforge' ) );
+				return;
+			}
+
+			if ( ! sideload ) {
+				doInsert( trimmed );
+				return;
+			}
+
+			var urls = extractImageUrls( trimmed );
+			if ( ! urls.length ) {
+				doInsert( trimmed );
+				return;
+			}
+
+			notice( 'success', __( 'Importing images, one moment...', 'ferryforge' ) );
+			wp.apiFetch( {
+				path: '/ferryforge/v1/sideload',
+				method: 'POST',
+				data: { urls: urls },
+			} ).then(
+				function ( res ) {
+					var map = ( res && res.map ) || {};
+					var updated = trimmed;
+					Object.keys( map ).forEach( function ( original ) {
+						if ( map[ original ] && map[ original ] !== original ) {
+							updated = updated.split( original ).join( map[ original ] );
+						}
+					} );
+					doInsert( updated );
+				},
+				function () {
+					notice( 'error', __( 'Could not import the images, so the blocks were added with their original links.', 'ferryforge' ) );
+					doInsert( trimmed );
+				}
+			);
+		}
+
 		function handleFile( event ) {
 			var file = event.target.files && event.target.files[ 0 ];
 			if ( ! file ) {
@@ -166,7 +222,7 @@
 			}
 			var reader = new FileReader();
 			reader.onload = function () {
-				insertMarkup( String( reader.result ) );
+				insertMarkup( String( reader.result ), importMedia );
 			};
 			reader.onerror = function () {
 				notice( 'error', __( 'That file could not be read.', 'ferryforge' ) );
@@ -238,12 +294,18 @@
 					rows: 6,
 					placeholder: '<!-- wp:paragraph -->...',
 				} ),
+				el( CheckboxControl, {
+					label: __( 'Also import images into this site', 'ferryforge' ),
+					help: __( 'Copies any external images into your media library and updates the links, so the layout does not depend on the other site.', 'ferryforge' ),
+					checked: importMedia,
+					onChange: setImportMedia,
+				} ),
 				el(
 					Button,
 					{
 						variant: 'primary',
 						onClick: function () {
-							insertMarkup( importValue );
+							insertMarkup( importValue, importMedia );
 						},
 						className: 'ferryforge-button',
 					},

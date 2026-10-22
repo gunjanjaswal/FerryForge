@@ -4,7 +4,7 @@ Tags: blocks, block editor, patterns, export, import
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ No. Copying, downloading, and importing all run in your browser. Saving a patter
 
 == Changelog ==
 
+= 1.1.0 =
+* New: an "Also import images into this site" option in the Import panel. When you bring blocks in from another site, Ferry Forge can copy any external images into your own media library and update the links, so the layout no longer depends on the site it came from.
+
 = 1.0.1 =
 * Display name is now "Ferry Forge".
 
@@ -71,6 +74,9 @@ No. Copying, downloading, and importing all run in your browser. Saving a patter
 * Save a selection as a synced pattern.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Import can now pull external images into your media library and rewrite the links, so imported layouts no longer depend on the source site.
 
 = 1.0.0 =
 First release of Ferry Forge.
