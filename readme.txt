@@ -2,9 +2,9 @@
 Contributors: gunjanjaswal
 Tags: blocks, block editor, patterns, export, import
 Requires at least: 6.3
-Tested up to: 7.1
+Tested up to: 7.1.4
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ No. Copying, downloading, and importing all run in your browser. Saving a patter
 1. The Ferry Forge sidebar with the Export, Import, and Save as pattern sections.
 
 == Changelog ==
+
+= 1.1.1 =
+* Tested and confirmed compatible with WordPress 7.1.4.
 
 = 1.1.0 =
 * New: an "Also import images into this site" option in the Import panel. When you bring blocks in from another site, Ferry Forge can copy any external images into your own media library and update the links, so the layout no longer depends on the site it came from.

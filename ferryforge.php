@@ -3,7 +3,7 @@
  * Plugin Name:       Ferry Forge
  * Plugin URI:        https://github.com/gunjanjaswal/FerryForge
  * Description:       Move blocks between sites. Export a selection (or the whole post) to a file or the clipboard, import it anywhere, and save a selection as a synced pattern, all from the editor sidebar.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Gunjan Jaswal
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FERRYFORGE_VERSION', '1.1.0' );
+define( 'FERRYFORGE_VERSION', '1.1.1' );
 
 /**
  * Enqueue the editor sidebar script and styles.
