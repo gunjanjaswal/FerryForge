@@ -100,6 +100,8 @@ No. Copy, download, and import all run in your browser. Saving a pattern uses yo
 
 ## Changelog
 
+The full changelog lives in [`readme.txt`](readme.txt). Recent releases:
+
 ### 1.1.1
 - Tested and confirmed compatible with WordPress 7.1.4.
 
