@@ -3,9 +3,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/WordPress-6.3%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 6.3+">
   <img src="https://img.shields.io/badge/PHP-7.4%2B-777BB4?logo=php&logoColor=white" alt="PHP 7.4+">
-  <img src="https://img.shields.io/badge/Tested%20up%20to-7.1-21759B?logo=wordpress&logoColor=white" alt="Tested up to 7.1">
+  <img src="https://img.shields.io/badge/Tested%20up%20to-7.1.4-21759B?logo=wordpress&logoColor=white" alt="Tested up to 7.1.4">
   <img src="https://img.shields.io/badge/License-GPLv2%2B-3DA639?logo=gnu&logoColor=white" alt="License GPLv2+">
-  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/version-1.1.1-brightgreen" alt="Version 1.1.1">
   <img src="https://img.shields.io/badge/build-no%20build%20step-blue" alt="No build step">
 </p>
 
@@ -97,6 +97,23 @@ No. Copy, download, and import all run in your browser. Saving a pattern uses yo
 
 - WordPress 6.3 or newer
 - PHP 7.4 or newer
+
+## Changelog
+
+### 1.1.1
+- Tested and confirmed compatible with WordPress 7.1.4.
+
+### 1.1.0
+- New: an "Also import images into this site" option in the Import panel. When you bring blocks in from another site, Ferry Forge can copy any external images into your own media library and update the links, so the layout no longer depends on the site it came from.
+
+### 1.0.1
+- Display name is now "Ferry Forge".
+
+### 1.0.0
+- First release.
+- Export selected blocks, or the whole post, to the clipboard or a downloadable file.
+- Import blocks from a file or pasted markup straight into the post you are editing.
+- Save a selection as a synced pattern.
 
 ## Support
 
